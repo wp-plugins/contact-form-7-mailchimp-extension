@@ -14,7 +14,7 @@ add_action( 'wpcf7_after_save', 'wpcf7_cm_save_campaignmonitor' );
 
 function add_cm_meta () {
 	if ( wpcf7_admin_has_edit_cap() ) {
-		add_meta_box( 'cf7cmdiv', __( 'Mailchimp: Subscriber List Details <a href="http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension" class="helping-hand" target="_blank">Need Help?</a>', 'wpcf7' ),
+		add_meta_box( 'cf7cmdiv', __( 'Mailchimp: Subscriber List Details <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-hand" target="_blank">Need Help?</a>', 'wpcf7' ),
 			'wpcf7_cm_add_campaignmonitor', 'cfseven', 'cf7_cm', 'core',
 			array(
 				'id' => 'wpcf7-cf7',
