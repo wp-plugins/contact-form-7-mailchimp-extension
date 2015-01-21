@@ -52,8 +52,8 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
+1. mche-screenshot-1.png
+2. mche-screenshot-2.png
 
 == Changelog ==
 
