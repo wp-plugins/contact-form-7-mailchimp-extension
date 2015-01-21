@@ -1,0 +1,17 @@
+/*
+	Author Name: Renzo Johnson <renzo.johnson@gmail.com>
+	Plugin Name: Contact Form 7 Campaign Monitor Extension
+	Plugin URI: http://renzojohnson.com/contributions/contact-form-7-campaign-monitor-extension
+*/
+
+a.helping-hand {
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-decoration: none;
+}
+
+a.helping-hand:hover {
+	text-decoration: underline;
+}
