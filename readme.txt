@@ -38,17 +38,17 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 
 You will find 'MailChimp: Subscriber List Details' menu in your Contact Form 7 editor.
 
-For basic usage, you can also have a look at the [Extension homepage](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension), you can also have a look at the [Contact Form 7 homepage](http://contactform7.com/).
+For basic usage, you can also have a look at the [Extension homepage](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension), you can also have a look at the [Contact Form 7 homepage](http://contactform7.com).
 
 == Frequently Asked Questions ==
 
 Do you have questions or issues with Contact Form 7 MailChimp Extension? Use these support channels appropriately.
 
-1. [Docs](http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension)
-2. [FAQ](http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension)
-3. [Support Forum](http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension)
+1. [Docs](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+2. [FAQ](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+3. [Support Forum](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 
-[Support](http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension)
+[Support](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 
 == Screenshots ==
 
@@ -57,7 +57,7 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 == Changelog ==
 
-For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mail-chimp-extension).
+For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
 = 0.1.2 =
 
