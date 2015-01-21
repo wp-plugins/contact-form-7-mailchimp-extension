@@ -29,11 +29,9 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 2. Contact Form 7 (4.0 or higher)
 3. MailChimp account
 
-= Leave a comment =
+= Leave a Comment or a Review =
 
-If this plugin is useful to you, please leave a review here: [Extension Review Page](https://wordpress.org/support/view/plugin-reviews/contact-form-7-mailchimp-extension)
-
-Or Leave a comment here: [Extension comments page](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+If this plugin is useful to you, please leave a review here: [Extension Review Page](https://wordpress.org/support/view/plugin-reviews/contact-form-7-mailchimp-extension) Or Leave a comment here: [Extension comments page](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 
 
 
