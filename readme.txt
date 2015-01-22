@@ -23,6 +23,11 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 * Latest MailChimp API
 * Constantly updated
 
+= Please note =
+
+* Support for groups - coming soon
+* Support for segments - coming soon
+
 = Requirements =
 
 1. Self hosted WordPress.org installation (3.9 or higher)
