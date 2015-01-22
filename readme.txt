@@ -23,7 +23,7 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 * Latest MailChimp API
 * Constantly updated
 
-= Please note =
+= Please note*** =
 
 * Support for groups - coming soon
 * Support for segments - coming soon
