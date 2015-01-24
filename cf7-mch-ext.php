@@ -1,16 +1,16 @@
 <?php
 /*
-Plugin Name: Contact Form 7 MailChimp Extension
-Plugin URI: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
-Description: Integrate Contact Form 7 with MailChimp. Automatically add form submissions to predetermined lists in MailChimp, using its latest API.
-Author: Renzo Johnson
+Plugin Name: Contact Form 7 Mail Chimp Extension
+Plugin URI: http://renzojohnson.com/contributions/contact-form-7-campaign-monitor-extension
+Description: Integrate Contact Form 7 with Mail Chimp. Automatically add form submissions to predetermined lists in Mail Chimp, using its latest API.
+Author: Renzo Johnson / FC
 Author URI: http://renzojohnson.com
 Text Domain: contact-form-7
 Domain Path: /languages/
-Version: 0.1.3
+Version: 0.1.14
 */
 
-/*  Copyright 2013-2015 Renzo Johnson (email: renzojohnson at gmail.com)
+/*  Copyright 2013-2014 Renzo Johnson (email: renzojohnson at gmail.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -27,6 +27,6 @@ Version: 0.1.3
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'lib/functionsMCH.php');
+require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'lib/functions.php');
 require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'lib/enqueue.php');
 
