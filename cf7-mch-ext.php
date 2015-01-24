@@ -1,13 +1,13 @@
 <?php
 /*
-Plugin Name: Contact Form 7 Mail Chimp Extension
-Plugin URI: http://renzojohnson.com/contributions/contact-form-7-campaign-monitor-extension
-Description: Integrate Contact Form 7 with Mail Chimp. Automatically add form submissions to predetermined lists in Mail Chimp, using its latest API.
-Author: Renzo Johnson / FC
+Plugin Name: Contact Form 7 MailChimp Extension
+Plugin URI: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
+Description: Integrate Contact Form 7 with MailChimp. Automatically add form submissions to predetermined lists in MailChimp, using its latest API.
+Author: Renzo Johnson
 Author URI: http://renzojohnson.com
 Text Domain: contact-form-7
 Domain Path: /languages/
-Version: 0.1.14
+Version: 0.1.15
 */
 
 /*  Copyright 2013-2014 Renzo Johnson (email: renzojohnson at gmail.com)
