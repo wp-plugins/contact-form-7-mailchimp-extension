@@ -19,3 +19,12 @@ function wpcf7_mche_admin_enqueue_scripts () {
 }
 
 add_action( 'admin_print_scripts', 'wpcf7_mche_admin_enqueue_scripts' );
+
+
+/* Custom ajax loader */
+add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
+function my_wpcf7_ajax_loader () {
+	return  wpcf7_mch_spartan_plugin_url( '../assets/images/fading-squares.gif' );
+}
+
+add_action( 'admin_print_scripts', 'wpcf7_mche_admin_enqueue_scripts' );
