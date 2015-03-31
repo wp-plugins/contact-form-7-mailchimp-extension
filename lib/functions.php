@@ -1,6 +1,9 @@
 <?php
+// error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+// the rest of your script...
 
-define( 'WPCF7_SPARTAN_VERSION', '0.1.6' );
+define( 'WPCF7_SPARTAN_VERSION', '0.1.8' );
 
 if ( ! defined( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -40,16 +43,16 @@ function wpcf7_mch_add_mailchimp($args) {
 	<div class="half-left">
 		<div class="mail-field">
 			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?></label><br />
-			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['email'] ); ?>" />
+			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['name'] ); ?>" />
+		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field"><br/>
-		<input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( $cf7_mch['cfactive'] ) ? ' checked="checked"' : ''; ?> />
+		<input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( isset($cf7_mch['cfactive']) ) ? ' checked="checked"' : ''; ?> />
 		<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?></label><br/><br/>
 		</div>
 	</div>
@@ -57,16 +60,16 @@ function wpcf7_mch_add_mailchimp($args) {
 	<div class="half-right">
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['api'] ); ?>" />
+		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['list'] ); ?>" />
+		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" value="<?php echo (isset( $cf7_mch['list']) ) ?  esc_attr( $cf7_mch['list']) : '' ; ?>" />
 		</div>
 
 		<div class="mail-field"><br/>
-		<input type="checkbox" id="wpcf7-mailchimp-resubscribeoption" name="wpcf7-mailchimp[resubscribeoption]" value="1"<?php echo ( $cf7_mch['resubscribeoption'] ) ? ' checked="checked"' : ''; ?> />
+		<input type="checkbox" id="wpcf7-mailchimp-resubscribeoption" name="wpcf7-mailchimp[resubscribeoption]" value="1"<?php echo ( isset($cf7_mch['resubscribeoption']) ) ? ' checked="checked"' : ''; ?> />
 		<label for="wpcf7-mailchimp-resubscribeoption"><?php echo esc_html( __( 'Allow Users to Resubscribe after being Deleted or Unsubscribed? (checked = true)', 'wpcf7' ) ); ?></label><br/><br/>
 		</div>
 	</div>
@@ -225,18 +228,19 @@ function ext_author_form_class_attr( $class ) {
 }
 
 
-add_filter('wpcf7_form_elements', 'cme_ext_author_wpcf7');
-function cme_ext_author_wpcf7($ext_author) {
+add_filter('wpcf7_form_elements', 'ext_author_wpcf7');
+function ext_author_wpcf7($mce_author) {
 
-  $ext_author.= '<div class="wpcf7-display-none">'. "\n";
-  $ext_author .= 'Contact form 7 extended by '. "\n";
-  $ext_author .= '<a href="http://renzojohnson.com" title="Web Developer: Renzo Johnson" alt="Web Developer: Renzo Johnson" target="_blank">Renzo Johnson</a>'. "\n";
-  $ext_author .= '</div>'. "\n";
+  $mce_author .= '<div class="wpcf7-display-none">'. "\n";
+  $mce_author .= 'Contact form 7 extended by '. "\n";
+  $mce_author .= '<a href="http://renzojohnson.com" title="Web Developer: Renzo Johnson" alt="Web Developer: Renzo Johnson" target="_blank">Renzo Johnson</a>'. "\n";
+  $mce_author .= '</div>'. "\n";
 
-  return $ext_author;
+  echo $mce_author;
+
+  return $mce_author;
 
 }
-
 
 function wpcf7_mch_spartan_plugin_url( $path = '' ) {
 	return plugins_url( $path, WPCF7_MCH_SPARTAN_PLUGIN_BASENAME );
