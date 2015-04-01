@@ -7,7 +7,7 @@ Author: Renzo Johnson
 Author URI: http://renzojohnson.com
 Text Domain: contact-form-7
 Domain Path: /languages/
-Version: 0.2.1
+Version: 0.2.2
 */
 
 /*  Copyright 2013-2014 Renzo Johnson (email: renzojohnson at gmail.com)
