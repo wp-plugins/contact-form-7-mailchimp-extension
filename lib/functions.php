@@ -3,7 +3,7 @@
 // ini_set("display_errors", 1);
 // the rest of your script...
 
-define( 'WPCF7_SPARTAN_VERSION', '0.2.1' );
+define( 'WPCF7_SPARTAN_VERSION', '0.2.2' );
 
 if ( ! defined( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME' ) )
 	define( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
@@ -235,8 +235,6 @@ function ext_author_wpcf7($mce_author) {
   $mce_author .= 'Contact form 7 extended by '. "\n";
   $mce_author .= '<a href="http://renzojohnson.com" title="Web Developer: Renzo Johnson" alt="Web Developer: Renzo Johnson" target="_blank">Renzo Johnson</a>'. "\n";
   $mce_author .= '</div>'. "\n";
-
-  echo $mce_author;
 
   return $mce_author;
 
