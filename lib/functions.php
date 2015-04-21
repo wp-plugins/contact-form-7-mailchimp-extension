@@ -156,7 +156,7 @@ function wpcf7_mch_subscribe($obj)
 		if($subscribe && $email != $cf7_mch['email'])
 		{
 
-      require_once( SPARTAN_MCE_PLUGIN_URL .'/api/Mailchimp.php');
+      require_once( SPARTAN_MCE_PLUGIN_DIR .'/api/Mailchimp.php');
 
 			$wrap = new Mailchimp($cf7_mch['api']);
 			$Mailchimp = new Mailchimp( $cf7_mch['api'] );
