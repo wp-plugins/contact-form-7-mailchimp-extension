@@ -68,6 +68,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+= 0.2.7 =
+
+* Fixed typo
+
 = 0.2.5 =
 
 * Fixed form not submitting when email already subscribed
