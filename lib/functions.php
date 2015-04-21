@@ -3,12 +3,6 @@
 // ini_set("display_errors", 1);
 // the rest of your script...
 
-define( 'WPCF7_SPARTAN_VERSION', '0.2.2' );
-
-if ( ! defined( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME' ) )
-	define( 'WPCF7_MCH_SPARTAN_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
-
-
 function wpcf7_mch_save_mailchimp($args) {
 	update_option( 'cf7_mch_'.$args->id, $_POST['wpcf7-mailchimp'] );
 }
@@ -162,30 +156,34 @@ function wpcf7_mch_subscribe($obj)
 		if($subscribe && $email != $cf7_mch['email'])
 		{
 
-      require_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'../api/Mailchimp.php');
+      require_once( SPARTAN_MCE_PLUGIN_URL .'/api/Mailchimp.php');
 
 			$wrap = new Mailchimp($cf7_mch['api']);
 			$Mailchimp = new Mailchimp( $cf7_mch['api'] );
 			$Mailchimp_Lists = new Mailchimp_Lists($Mailchimp);
+			// Se coloco un controlador de error en para evitar error cuando ya existe una suscripcion en la lista
+			try {
 
-			foreach($listarr as $listid)
-			{
+				foreach($listarr as $listid)
+				{
+	        		$listid = trim($listarr[0]);
+	        		$result = $wrap->lists->subscribe($listid,
+	                array('email'=>$email),
+	                $merge_vars,
+	                false,
+	                true,
+	                false,
+	                false
+	               );
 
-        $listid = trim($listarr[0]);
-        $result = $wrap->lists->subscribe($listid,
-                array('email'=>$email),
-                $merge_vars,
-                false,
-                $ResubscribeOption,
-                false,
-                false
-               );
-
-			}
-
+				}
+			 } catch (Exception $e)
+			 {
+        		//echo 'Mensaje de Error: ',  $e->getMessage(), "\n";
+    		 }
 		}
-
 	}
+
 }
 
 function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) {
@@ -219,27 +217,34 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
 }
 
 
-add_filter( 'wpcf7_form_class_attr', 'ext_author_form_class_attr' );
-function ext_author_form_class_attr( $class ) {
+add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
+function spartan_mce_class_attr( $class ) {
 
-  $class .= ' mailChimpExt';
+  $class .= ' mailChimpExt-' . SPARTAN_MCE_VERSION;
   return $class;
 
 }
 
 
-add_filter('wpcf7_form_elements', 'ext_author_wpcf7');
-function ext_author_wpcf7($mce_author) {
+add_filter('wpcf7_form_elements', 'spartan_mce_author_wpcf7', 100);
+function spartan_mce_author_wpcf7($mce_author) {
 
-  $mce_author .= '<div class="wpcf7-display-none">'. "\n";
-  $mce_author .= 'Contact form 7 extended by '. "\n";
-  $mce_author .= '<a href="http://renzojohnson.com" title="Web Developer: Renzo Johnson" alt="Web Developer: Renzo Johnson" target="_blank">Renzo Johnson</a>'. "\n";
-  $mce_author .= '</div>'. "\n";
+	$author_pre = 'Contact form 7 extended by ';
+	$author_name = 'Renzo Johnson';
+	$author_url = 'http://renzojohnson.com';
+	$author_title = 'Web Developer: Renzo Johnson';
+
+  $mce_author .= '<p class="wpcf7-display-none mailChimpExt-' . SPARTAN_MCE_VERSION . '">';
+  $mce_author .= $author_url;
+  $mce_author .= '<a href="'.$author_url.'" ';
+  $mce_author .= 'title="'.$author_title.'" ';
+  $mce_author .= 'alt="'.$author_title.'" ';
+  $mce_author .= 'target="_blank">';
+  $mce_author .= ''.$author_title.'';
+  $mce_author .= '</a>';
+  $mce_author .= '</p>'. "\n";
 
   return $mce_author;
 
 }
 
-function wpcf7_mch_spartan_plugin_url( $path = '' ) {
-	return plugins_url( $path, WPCF7_MCH_SPARTAN_PLUGIN_BASENAME );
-}
