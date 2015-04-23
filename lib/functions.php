@@ -115,7 +115,16 @@ function wpcf7_mch_subscribe($obj)
 		$lists = cf7_mch_tag_replace( $regex, $cf7_mch['list'], $submission->get_posted_data() );
 		$listarr = explode(',',$lists);
 
-		$merge_vars=array('FNAME'=>$name);//By default the key label for the name must be FNAME
+		// parse first & last name
+		$parts = explode(" ", $name);
+		if(count($parts)) { // ensure we set first and last name exist
+			$lastname = array_pop($parts);
+			$firstname = implode(" ", $parts);
+
+			$merge_vars=array('FNAME'=>$firstname, 'LNAME'=>$lastname);
+		} else { // otherwise user provided just one name
+			$merge_vars=array('FNAME'=>$name);//By default the key label for the name must be FNAME
+		}
 
 		if( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 )
 		{
@@ -170,8 +179,8 @@ function wpcf7_mch_subscribe($obj)
 	        		$result = $wrap->lists->subscribe($listid,
 	                array('email'=>$email),
 	                $merge_vars,
-	                false,
-	                true,
+	                'html', //email type
+	                false, // double opt-in
 	                false,
 	                false
 	               );
