@@ -117,7 +117,7 @@ function wpcf7_mch_subscribe($obj)
 
 		// parse first & last name
 		$parts = explode(" ", $name);
-		if(count($parts)) { // ensure we set first and last name exist
+		if(count($parts)>1) { // ensure we set first and last name exist
 			$lastname = array_pop($parts);
 			$firstname = implode(" ", $parts);
 
