@@ -34,15 +34,21 @@ function wpcf7_mch_add_mailchimp($args) {
 ?>
 
 <div class="mail-fields">
+
 	<div class="half-left">
 		<div class="mail-field">
 			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?></label><br />
-			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
+			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" placeholder="[your-email]" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
+		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" placeholder="[your-name]" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
+		</div>
+
+		<div class="mail-field">
+		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?></label><br />
+		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in]" value="<?php echo esc_attr( $cf7_mch['accept'] ); ?>" />
 		</div>
 
 		<div class="mail-field"><br/>
@@ -54,12 +60,12 @@ function wpcf7_mch_add_mailchimp($args) {
 	<div class="half-right">
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
+		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" placeholder="6683ef9bdef6755f8fe686ce53bdf73a-us4" value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
 		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?></label><br />
-		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" value="<?php echo (isset( $cf7_mch['list']) ) ?  esc_attr( $cf7_mch['list']) : '' ; ?>" />
+		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" placeholder="5d4e8a6072" value="<?php echo (isset( $cf7_mch['list']) ) ?  esc_attr( $cf7_mch['list']) : '' ; ?>" />
 		</div>
 
 		<div class="mail-field"><br/>
@@ -71,23 +77,27 @@ function wpcf7_mch_add_mailchimp($args) {
 	<br class="clear" />
 
 	<div class="mailchimp-custom-fields">
-		<?php for($i=1;$i<=4;$i++){ ?>
+		<?php for($i=1;$i<=6;$i++){ ?>
+
 			<div class="half-left">
 				<div class="mail-field">
-				<label for="wpcf7-mailchimp-CustomKey<?php echo $i; ?>"><?php echo esc_html( __( 'MailChimp Custom Field Name '.$i.':', 'wpcf7' ) ); ?></label><br />
-				<input type="text" id="wpcf7-mailchimp-CustomKey<?php echo $i; ?>" name="wpcf7-mailchimp[CustomKey<?php echo $i; ?>]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['CustomKey'.$i] ); ?>" />
+				<label for="wpcf7-mailchimp-CustomValue<?php echo $i; ?>"><?php echo esc_html( __( 'Contact Form Value '.$i.':', 'wpcf7' ) ); ?></label><br />
+				<input type="text" id="wpcf7-mailchimp-CustomValue<?php echo $i; ?>" name="wpcf7-mailchimp[CustomValue<?php echo $i; ?>]" class="wide" size="70" placeholder="[your-example-value]" value="<?php echo esc_attr( $cf7_mch['CustomValue'.$i] ); ?>" />
 				</div>
 			</div>
+
 			<div class="half-right">
 				<div class="mail-field">
-				<label for="wpcf7-mailchimp-CustomValue<?php echo $i; ?>"><?php echo esc_html( __( 'Form Value '.$i.':', 'wpcf7' ) ); ?></label><br />
-				<input type="text" id="wpcf7-mailchimp-CustomValue<?php echo $i; ?>" name="wpcf7-mailchimp[CustomValue<?php echo $i; ?>]" class="wide" size="70" value="<?php echo esc_attr( $cf7_mch['CustomValue'.$i] ); ?>" />
+				<label for="wpcf7-mailchimp-CustomKey<?php echo $i; ?>"><?php echo esc_html( __( 'MailChimp Custom Field Name '.$i.':', 'wpcf7' ) ); ?></label><br />
+				<input type="text" id="wpcf7-mailchimp-CustomKey<?php echo $i; ?>" name="wpcf7-mailchimp[CustomKey<?php echo $i; ?>]" class="wide" size="70" placeholder="example-field" value="<?php echo esc_attr( $cf7_mch['CustomKey'.$i] ); ?>" />
 				</div>
 			</div>
+
 			<br class="clear" />
 		<?php } ?>
 
 	</div>
+
 </div>
 
 <?php
@@ -220,7 +230,7 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
 add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
 function spartan_mce_class_attr( $class ) {
 
-  $class .= ' mailChimpExt-' . SPARTAN_MCE_VERSION;
+  $class .= ' mailChimp-ext-' . SPARTAN_MCE_VERSION;
   return $class;
 
 }
@@ -229,13 +239,13 @@ function spartan_mce_class_attr( $class ) {
 add_filter('wpcf7_form_elements', 'spartan_mce_author_wpcf7', 100);
 function spartan_mce_author_wpcf7($mce_author) {
 
-	$author_pre = 'Contact form 7 extended by ';
+	$author_pre = 'Contact form 7 Mailchimp extension by ';
 	$author_name = 'Renzo Johnson';
 	$author_url = 'http://renzojohnson.com';
-	$author_title = 'Web Developer: Renzo Johnson';
+	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer';
 
   $mce_author .= '<p class="wpcf7-display-none mailChimpExt-' . SPARTAN_MCE_VERSION . '">';
-  $mce_author .= $author_url;
+  $mce_author .= $author_pre;
   $mce_author .= '<a href="'.$author_url.'" ';
   $mce_author .= 'title="'.$author_title.'" ';
   $mce_author .= 'alt="'.$author_title.'" ';

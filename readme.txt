@@ -3,7 +3,7 @@ Contributors: rnzo
 Donate link: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
 Tags: mailchimp, mail chimp, contact, form, contact form, contact form 7, email, mailing list, createsend, mandrill, renzo johnson, cme
 Requires at least: 3.9
-Tested up to: 4.2
+Tested up to: 4.3
 Stable tag: 4.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -67,6 +67,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 == Changelog ==
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
+
+= 0.3.0 =
+
+* Added opt-in checkbox
 
 = 0.2.7 =
 
