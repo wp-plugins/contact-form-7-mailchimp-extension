@@ -88,3 +88,4 @@ For more information, see [Releases](http://renzojohnson.com/contributions/conta
 = 0.1.2 =
 
 * Release version
+
