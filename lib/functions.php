@@ -1,8 +1,4 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
-// the rest of your script...
-
 function wpcf7_mch_save_mailchimp($args) {
 	update_option( 'cf7_mch_'.$args->id, $_POST['wpcf7-mailchimp'] );
 }
@@ -37,34 +33,34 @@ function wpcf7_mch_add_mailchimp($args) {
 
 	<div class="half-left">
 		<div class="mail-field">
-			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?></label><br />
+			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Email:">Help?</a></label><br />
 			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" placeholder="[your-email]" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
-		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?></label><br />
+		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Name">Help?</a></label><br />
 		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" placeholder="[your-name]" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
-		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?></label><br />
+		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox" class="helping-field" target="_blank" title="get help with Required Acceptance Field - Opt-in">Help?</a></label><br />
 		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in]" value="<?php echo esc_attr( $cf7_mch['accept'] ); ?>" />
 		</div>
 
 		<div class="mail-field"><br/>
 		<input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( isset($cf7_mch['cfactive']) ) ? ' checked="checked"' : ''; ?> />
-		<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?></label><br/><br/>
+		<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Use Custom Fields', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Custom Fields">Help?</a></label><br/><br/>
 		</div>
 	</div>
 
 	<div class="half-right">
 		<div class="mail-field">
-		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?></label><br />
+		<label for="wpcf7-mailchimp-api"><?php echo esc_html( __( 'MailChimp API Key:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key" class="helping-field" target="_blank" title="get help with MailChimp API Key">Help?</a></label><br />
 		<input type="text" id="wpcf7-mailchimp-api" name="wpcf7-mailchimp[api]" class="wide" size="70" placeholder="6683ef9bdef6755f8fe686ce53bdf73a-us4" value="<?php echo (isset($cf7_mch['api']) ) ? esc_attr( $cf7_mch['api'] ) : ''; ?>" />
 		</div>
 
 		<div class="mail-field">
-		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?></label><br />
+		<label for="wpcf7-mailchimp-list"><?php echo esc_html( __( 'MailChimp List ID:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id" class="helping-field" target="_blank" title="get help with MailChimp List ID">Help?</a></label><br />
 		<input type="text" id="wpcf7-mailchimp-list" name="wpcf7-mailchimp[list]" class="wide" size="70" placeholder="5d4e8a6072" value="<?php echo (isset( $cf7_mch['list']) ) ?  esc_attr( $cf7_mch['list']) : '' ; ?>" />
 		</div>
 
@@ -173,24 +169,17 @@ function wpcf7_mch_subscribe($obj)
 			$Mailchimp_Lists = new Mailchimp_Lists($Mailchimp);
 			// Se coloco un controlador de error en para evitar error cuando ya existe una suscripcion en la lista
 			try {
-
 				foreach($listarr as $listid)
 				{
-	        		$listid = trim($listarr[0]);
-	        		$result = $wrap->lists->subscribe($listid,
-	                array('email'=>$email),
-	                $merge_vars,
-	                false,
-	                true,
-	                false,
-	                false
-	               );
-
+	        $listid = trim($listarr[0]);
+	        $result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, false, false, false, false);
 				}
 			 } catch (Exception $e)
 			 {
-        		//echo 'Mensaje de Error: ',  $e->getMessage(), "\n";
-    		 }
+        		echo 'Error, check your error log file for details';
+			 			error_log($e->getMessage(), 0);
+			 			error_log($e->getMessage(), 1);
+    		}
 		}
 	}
 

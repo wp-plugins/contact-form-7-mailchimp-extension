@@ -1,17 +1,28 @@
 /*
 	Author Name: Renzo Johnson <renzo.johnson@gmail.com>
 	Plugin Name: Contact Form 7 Campaign Monitor Extension
-	Plugin URI: http://renzojohnson.com/contributions/contact-form-7-campaign-monitor-extension
+	Plugin URI: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
 */
 
 a.helping-hand {
 	font-size: 14px;
+	line-height: 1.2em;
 	font-weight: bold;
 	padding-left: 20px;
 	padding-right: 20px;
 	text-decoration: none;
 }
 
-a.helping-hand:hover {
+a.helping-field {
+	font-size: 13px;
+	line-height: 1.2em;
+	font-weight: normal;
+	padding-left: 4px;
+	padding-right: 20px;
+	text-decoration: none;
+}
+
+a.helping-hand:hover,
+a.helping-field:hover {
 	text-decoration: underline;
 }
