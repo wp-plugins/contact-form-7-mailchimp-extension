@@ -70,6 +70,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+= 0.4.0 =
+
+* Help updated
+
 = 0.3.3 =
 
 * Disabled double opt-in - now it subscribes by default with not confirmation email
