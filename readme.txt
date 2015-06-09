@@ -1,7 +1,7 @@
 === Contact Form 7 MailChimp Extension ===
 Contributors: rnzo
 Donate link: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
-Tags: mailchimp, mail chimp, contact, form, contact form, contact form 7, email, mailing list, createsend, mandrill, renzo johnson, cme
+Tags: mailchimp, mail chimp, contact, form, contact form, contact form 7, email, mailing list, createsend, mandrill, renzo, renzo johnson, cme
 Requires at least: 3.9
 Tested up to: 4.3
 Stable tag: 4.0.1
@@ -33,7 +33,7 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 = Requirements =
 
 1. Self hosted WordPress.org installation (3.9 or higher)
-2. Contact Form 7 (4.0 or higher)
+2. Contact Form 7 (4.2 or higher)
 3. MailChimp account
 
 = Leave a Comment or a Review =
@@ -69,6 +69,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 == Changelog ==
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
+
+= 0.4.2 =
+
+* Hotfix to work with the new CF7 editor panels
 
 = 0.4.0 =
 
