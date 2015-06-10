@@ -18,7 +18,7 @@
 
 function wpcf7_mch_add_mailchimp($args) {
 	$cf7_mch_defaults = array();
-	$cf7_mch = get_option( 'cf7_mch_'.$args->id, $cf7_mch_defaults );
+	$cf7_mch = get_option( 'cf7_mch_'.$args->id(), $cf7_mch_defaults );
 ?>
 
 <div class="metabox-holder">
@@ -39,9 +39,8 @@ function wpcf7_mch_add_mailchimp($args) {
 
 		<p class="mail-field">
 		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox" class="helping-field" target="_blank" title="get help with Required Acceptance Field - Opt-in">Help?</a></label><br />
-		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in]" value="<?php echo esc_attr( $cf7_mch['accept'] ); ?>" />
+		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in]" value="<?php echo (isset($cf7_mch['accept'])) ? $cf7_mch['accept'] : '';?>" />
 		</p>
-
 
 
 		<p class="mail-field">
@@ -71,13 +70,13 @@ function wpcf7_mch_add_mailchimp($args) {
 
 		<div class="col-6">
 			<label for="wpcf7-mailchimp-CustomValue<?php echo $i; ?>"><?php echo esc_html( __( 'Contact Form Value '.$i.':', 'wpcf7' ) ); ?></label><br />
-			<input type="text" id="wpcf7-mailchimp-CustomValue<?php echo $i; ?>" name="wpcf7-mailchimp[CustomValue<?php echo $i; ?>]" class="wide" size="70" placeholder="[your-example-value]" value="<?php echo esc_attr( $cf7_mch['CustomValue'.$i] ); ?>" />
+			<input type="text" id="wpcf7-mailchimp-CustomValue<?php echo $i; ?>" name="wpcf7-mailchimp[CustomValue<?php echo $i; ?>]" class="wide" size="70" placeholder="[your-example-value]" value="<?php echo (isset( $cf7_mch['CustomValue'.$i]) ) ?  esc_attr( $cf7_mch['CustomValue'.$i] ) : '' ;  ?>" />
 		</div>
 
 
 		<div class="col-6">
 			<label for="wpcf7-mailchimp-CustomKey<?php echo $i; ?>"><?php echo esc_html( __( 'MailChimp Custom Field Name '.$i.':', 'wpcf7' ) ); ?></label><br />
-			<input type="text" id="wpcf7-mailchimp-CustomKey<?php echo $i; ?>" name="wpcf7-mailchimp[CustomKey<?php echo $i; ?>]" class="wide" size="70" placeholder="example-field" value="<?php echo esc_attr( $cf7_mch['CustomKey'.$i] ); ?>" />
+			<input type="text" id="wpcf7-mailchimp-CustomKey<?php echo $i; ?>" name="wpcf7-mailchimp[CustomKey<?php echo $i; ?>]" class="wide" size="70" placeholder="example-field" value="<?php echo (isset( $cf7_mch['CustomKey'.$i]) ) ?  esc_attr( $cf7_mch['CustomKey'.$i] ) : '' ;  ?>" />
 		</div>
 
 		<?php } ?>
@@ -265,5 +264,5 @@ function spartan_mce_author_wpcf7($mce_author) {
   return $mce_author;
 
 }
-add_filter('wpcf7_form_elements', 'spartan_mce_author_wpcf7', 100);
+add_filter('wpcf7_form_response_output', 'spartan_mce_author_wpcf7', 10);
 
