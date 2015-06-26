@@ -66,7 +66,7 @@ function wpcf7_mch_add_mailchimp($args) {
 	</div>
 
 	<div class="mailchimp-custom-fields">
-		<?php for($i=1;$i<=6;$i++){ ?>
+		<?php for($i=1;$i<=12;$i++){ ?>
 
 		<div class="col-6">
 			<label for="wpcf7-mailchimp-CustomValue<?php echo $i; ?>"><?php echo esc_html( __( 'Contact Form Value '.$i.':', 'wpcf7' ) ); ?></label><br />
