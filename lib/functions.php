@@ -252,7 +252,7 @@ function spartan_mce_author_wpcf7($mce_author) {
 	$author_pre = 'Contact form 7 Mailchimp extension by ';
 	$author_name = 'Renzo Johnson';
 	$author_url = 'http://renzojohnson.com';
-	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer';
+	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer - Full Stack Developer - MailChimp for Wordress';
 
   $mce_author .= '<p class="wpcf7-display-none mailChimpExt-' . SPARTAN_MCE_VERSION . '">';
   $mce_author .= $author_pre;
