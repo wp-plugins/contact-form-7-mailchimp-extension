@@ -70,6 +70,11 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+= 0.4.4 =
+
+* Fixed form not submitting when email already subscribed
+* Fixed conflict with any other plugin using Mailchimp class
+
 = 0.4.2 =
 
 * Hotfix to work with the new CF7 editor panels

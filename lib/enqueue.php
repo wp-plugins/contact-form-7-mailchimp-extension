@@ -23,9 +23,9 @@ function wpcf7_mce_admin_enqueue_scripts() {
 	if ( ! isset( $plugin_page ) || 'wpcf7' != $plugin_page )
 		return;
 
-	wp_enqueue_style( 'wpcf7-spartan-admin', SPARTAN_MCE_PLUGIN_URL . '/assets/css/style-spartan.css', array(), SPARTAN_MCE_VERSION, 'all' );
+	wp_enqueue_style( 'wpcf7-mce-admin', SPARTAN_MCE_PLUGIN_URL . '/assets/css/style-spartan.css', array(), SPARTAN_MCE_VERSION, 'all' );
 
-	wp_enqueue_script( 'wpcf7-spartan-admin', SPARTAN_MCE_PLUGIN_URL . '/assets/js/scripts-spartan.js', array( 'jquery', 'wpcf7-admin' ), SPARTAN_MCE_VERSION, true );
+	wp_enqueue_script( 'wpcf7-mce-admin', SPARTAN_MCE_PLUGIN_URL . '/assets/js/scripts-spartan.js', array( 'jquery', 'wpcf7-admin' ), SPARTAN_MCE_VERSION, true );
 
 
 }

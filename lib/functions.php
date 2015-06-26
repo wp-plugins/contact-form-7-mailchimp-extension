@@ -208,24 +208,27 @@ function wpcf7_mch_subscribe($obj) {
 		if($subscribe && $email != $cf7_mch['email'])
 		{
 
-      require_once( SPARTAN_MCE_PLUGIN_DIR .'/api/Mailchimp.php');
+			if (!class_exists('Mailchimp'))
+			{
+    		require_once( SPARTAN_MCE_PLUGIN_DIR .'/api/Mailchimp.php');
+			}
 
 			$wrap = new Mailchimp($cf7_mch['api']);
 			$Mailchimp = new Mailchimp( $cf7_mch['api'] );
 			$Mailchimp_Lists = new Mailchimp_Lists($Mailchimp);
-			// Se coloco un controlador de error en para evitar error cuando ya existe una suscripcion en la lista
+			// check if subscribed
 			try {
-				foreach($listarr as $listid)
-				{
-	        $listid = trim($listarr[0]);
-	        $result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, false, false, false, false);
-				}
-			 } catch (Exception $e)
-			 {
-        		echo 'Error, check your error log file for details';
+					foreach($listarr as $listid)
+					{
+		        		$listid = trim($listarr[0]);
+		        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, false, false, false, false);
+					}
+			 	} catch (Exception $e)
+			 	{
+        		//echo 'Error, check your error log file for details';
 			 			error_log($e->getMessage(), 0);
 			 			error_log($e->getMessage(), 1);
-    		}
+    			}
 		}
 	}
 
