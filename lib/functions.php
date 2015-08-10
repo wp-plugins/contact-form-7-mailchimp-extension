@@ -27,19 +27,19 @@ function wpcf7_mch_add_mailchimp($args) {
 
 		<p class="mail-field">
 		<label for="wpcf7-mailchimp-name"><?php echo esc_html( __( 'Subscriber Name:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Name">Help?</a></label><br />
-		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" placeholder="[your-name]" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
+		<input type="text" id="wpcf7-mailchimp-name" name="wpcf7-mailchimp[name]" class="wide" size="70" placeholder="[your-name] <= Make sure this the name of your form field" value="<?php echo (isset ($cf7_mch['name'] ) ) ? esc_attr( $cf7_mch['name'] ) : ''; ?>" />
 		</p>
 
 
 		<p class="mail-field">
 			<label for="wpcf7-mailchimp-email"><?php echo esc_html( __( 'Subscriber Email:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" class="helping-field" target="_blank" title="get help with Subscriber Email:">Help?</a></label><br />
-			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" placeholder="[your-email]" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
+			<input type="text" id="wpcf7-mailchimp-email" name="wpcf7-mailchimp[email]" class="wide" size="70" placeholder="[your-email] <= Make sure this the name of your form field" value="<?php echo (isset ( $cf7_mch['email'] ) ) ? esc_attr( $cf7_mch['email'] ) : ''; ?>" />
 		</p>
 
 
 		<p class="mail-field">
 		<label for="wpcf7-mailchimp-accept"><?php echo esc_html( __( 'Required Acceptance Field:', 'wpcf7' ) ); ?>  <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox" class="helping-field" target="_blank" title="get help with Required Acceptance Field - Opt-in">Help?</a></label><br />
-		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in]" value="<?php echo (isset($cf7_mch['accept'])) ? $cf7_mch['accept'] : '';?>" />
+		<input type="text" id="wpcf7-mailchimp-accept" name="wpcf7-mailchimp[accept]" class="wide" size="70" placeholder="[opt-in] <= Leave Empty if you are not using the checkbox or read the link above" value="<?php echo (isset($cf7_mch['accept'])) ? $cf7_mch['accept'] : '';?>" />
 		</p>
 
 
@@ -252,7 +252,7 @@ function spartan_mce_author_wpcf7($mce_author) {
 	$author_pre = 'Contact form 7 Mailchimp extension by ';
 	$author_name = 'Renzo Johnson';
 	$author_url = 'http://renzojohnson.com';
-	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer - Full Stack Developer - MailChimp for Wordress';
+	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer - Full Stack Developer - contact form 7 - contact form 7 mailchimp - mailchimp for Wordress';
 
   $mce_author .= '<p class="wpcf7-display-none mailChimpExt-' . SPARTAN_MCE_VERSION . '">';
   $mce_author .= $author_pre;
