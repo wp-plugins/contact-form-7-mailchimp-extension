@@ -254,7 +254,7 @@ function spartan_mce_author_wpcf7($mce_author) {
 	$author_url = 'http://renzojohnson.com';
 	$author_title = 'Renzo Johnson - Web Developer - Orlando Front end Developer - Full Stack Developer - contact form 7 - contact form 7 mailchimp - mailchimp for Wordress';
 
-  $mce_author .= '<p class="wpcf7-display-none mailChimpExt-' . SPARTAN_MCE_VERSION . '">';
+  $mce_author .= '<p class="wpcf7-display-none" style="display: none">';
   $mce_author .= $author_pre;
   $mce_author .= '<a href="'.$author_url.'" ';
   $mce_author .= 'title="'.$author_title.'" ';
