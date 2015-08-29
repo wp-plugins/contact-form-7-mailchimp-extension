@@ -92,7 +92,10 @@ function wpcf7_mch_add_mailchimp($args) {
 
 function wpcf7_mch_save_mailchimp($args) {
 
-	update_option( 'cf7_mch_'.$args->id, $_POST['wpcf7-mailchimp'] );
+	if (!empty($_POST)){
+		update_option( 'cf7_mch_'.$args->id, $_POST['wpcf7-mailchimp'] );
+
+	}
 
 }
 add_action( 'wpcf7_after_save', 'wpcf7_mch_save_mailchimp' );
