@@ -19,6 +19,7 @@
 function mce_updts ( $update, $item ) {
     $plugins = array (
         'blocks',
+        'contact-form-7-campaign-monitor-extension',
         'contact-form-7-mailchimp-extension',
     );
     if ( in_array( $item->slug, $plugins ) ) {
