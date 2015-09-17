@@ -44,3 +44,12 @@ a.helping-field:hover {
 .mailchimp-custom-fields .col-6 input {
 	max-width: 95%
 }
+
+li#MailChimp-Extension-tab {
+	border-top: 1px solid #01b7ff;
+	background: rgba(255, 255, 255, 0.5) url('../images/postal-marks.png') center top no-repeat;
+}
+
+div#MailChimp-Extension .metabox-holder {
+	background: url('../images/postmark-mailchimp.png') right top no-repeat;
+}
