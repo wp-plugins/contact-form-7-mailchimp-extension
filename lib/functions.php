@@ -23,6 +23,8 @@ function wpcf7_mch_add_mailchimp($args) {
 
 <div class="metabox-holder">
 
+	<h3>MailChimp Extension v.<?php echo SPARTAN_MCE_VERSION ?></h3>
+
 	<div class="mce-main-fields">
 
 		<p class="mail-field">
@@ -83,6 +85,9 @@ function wpcf7_mch_add_mailchimp($args) {
 
 	</div>
 
+	<hr class="p-hr">
+	<p class="p-author">This <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" title="This FREE WordPress plugin" alt="This FREE WordPress plugin">FREE WordPress plugin</a> is currently developed in Orlando, Florida by <a href="//renzojohnson.com" target="_blank" title="Front End Developer: Renzo Johnson" alt="Front End Developer: Renzo Johnson">Renzo Johnson</a>. Feel free to contact with your comments or suggestions.</p>
+
 </div>
 
 <?php
@@ -106,7 +111,7 @@ function show_mch_metabox ( $panels ) {
 
 	$new_page = array(
 		'MailChimp-Extension' => array(
-			'title' => __( 'MailChimp Extension', 'contact-form-7' ),
+			'title' => __( 'MailChimp', 'contact-form-7' ),
 			'callback' => 'wpcf7_mch_add_mailchimp'
 		)
 	);
