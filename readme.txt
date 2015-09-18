@@ -95,22 +95,6 @@ For more information, see [Releases](http://renzojohnson.com/contributions/conta
 
 * Disabled double opt-in - now it subscribes by default with not confirmation email
 
-= 0.3.1 =
-
-* Readme and screenshots updated
-
-= 0.3.0 =
-
-* Added opt-in checkbox
-
-= 0.2.7 =
-
-* Fixed typo
-
-= 0.2.5 =
-
-* Fixed form not submitting when email already subscribed
-
 = 0.1.2 =
 
 * Release version
