@@ -56,15 +56,14 @@ For basic usage, you can also have a look at the [Contact Form 7 MailChimp Exten
 Do you have questions or issues with Contact Form 7 MailChimp Extension? Use these support channels appropriately.
 
 1. [Contact Form 7 MailChimp Extension Docs](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-2. [Contact Form 7 MailChimp Extension FAQ](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-3. [Contact Form 7 MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-4. [MailChimp API Key](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key)
-5. [MailChimp List ID](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id)
-6. [MailChimp Opt-in Checkbox](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox)
-7. [Chimpmail](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-8. [MailChimp Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-9. [Aweber vs Mailchimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-10.[Mailchimp Contact Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+2. [Contact Form 7 MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+3. [MailChimp API Key](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key)
+4. [MailChimp List ID](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id)
+5. [MailChimp Opt-in Checkbox](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox)
+6. [Chimpmail](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+7. [MailChimp Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+8. [Aweber vs Mailchimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+9. [Mailchimp Contact Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 
 == Screenshots ==
 
