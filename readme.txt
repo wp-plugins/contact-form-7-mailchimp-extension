@@ -1,7 +1,7 @@
 === Contact Form 7 MailChimp Extension ===
 Contributors: rnzo
 Donate link: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
-Tags: contact form 7, email, mailing list, createsend, mandrill, renzo, renzo johnson, cme, contact, form, contact form, mail chimp, newsletter, mailchimp
+Tags: contact form 7, email, mailing list, createsend, mandrill, renzo, renzo johnson, cme, contact, form, contact form, mail chimp, newsletter, mailchimp, chimpmail
 Requires at least: 3.9
 Tested up to: 4.3
 Stable tag: 4.0.1
@@ -32,7 +32,7 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 
 = Requirements =
 
-1. Self hosted WordPress.org installation (3.9 or higher)
+1. Self hosted WordPress.org installation (4.0 or higher)
 2. Contact Form 7 (4.2 or higher)
 3. MailChimp account
 
@@ -44,10 +44,10 @@ If this plugin is useful to you, please leave a review here: [Extension Review P
 
 == Installation ==
 
-1. Upload the entire 'contact-form-7-mail-chimp-extension' folder to the '/wp-content/plugins/' directory.
+1. Upload the entire '[contact-form-7-mail-chimp-extension](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
-You will find 'MailChimp: Subscriber List Details' menu in your Contact Form 7 editor.
+You will find '[MailChimp: Subscriber List Details](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)' menu in your Contact Form 7 editor.
 
 For basic usage, you can also have a look at the [Contact Form 7 MailChimp Extension homepage](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension), you can also have a look at the [Contact Form 7 homepage](http://contactform7.com).
 
@@ -57,9 +57,14 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 1. [Contact Form 7 MailChimp Extension Docs](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 2. [Contact Form 7 MailChimp Extension FAQ](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-3. [Contact Form 7 MailChimp Extension Support Forum](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
-
-[Support](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+3. [Contact Form 7 MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+4. [MailChimp API Key](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-api-key)
+5. [MailChimp List ID](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-list-id)
+6. [MailChimp Opt-in Checkbox](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox)
+7. [Chimpmail](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+8. [MailChimp Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+9. [Aweber vs Mailchimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+10.[Mailchimp Contact Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 
 == Screenshots ==
 
