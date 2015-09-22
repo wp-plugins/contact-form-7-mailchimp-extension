@@ -56,9 +56,10 @@ function wpcf7_mch_add_mailchimp($args) {
 		</p>
 
 		<p class="mail-field">
-		<input type="checkbox" id="wpcf7-mailchimp-resubscribeoption" name="wpcf7-mailchimp[resubscribeoption]" value="1"<?php echo ( isset($cf7_mch['resubscribeoption']) ) ? ' checked="checked"' : ''; ?> />
-		<label for="wpcf7-mailchimp-resubscribeoption"><?php echo esc_html( __( 'Allow Users to Resubscribe after being Deleted or Unsubscribed? (checked = true)', 'wpcf7' ) ); ?></label>
+		<input type="checkbox" id="wpcf7-mailchimp-conf-subs" name="wpcf7-mailchimp[confsubs]" value="1"<?php echo ( isset($cf7_mch['confsubs']) ) ? ' checked="checked"' : ''; ?> />
+		<label for="wpcf7-mailchimp-double-opt-in"><b><?php echo esc_html( __( 'Enable Double Opt-in (checked = true)', 'wpcf7' ) ); ?></b></label>
 		</p>
+
 
 		<p class="mail-field">
 		<input type="checkbox" id="wpcf7-mailchimp-cf-active" name="wpcf7-mailchimp[cfactive]" value="1"<?php echo ( isset($cf7_mch['cfactive']) ) ? ' checked="checked"' : ''; ?> />
@@ -68,7 +69,7 @@ function wpcf7_mch_add_mailchimp($args) {
 	</div>
 
 	<div class="mailchimp-custom-fields">
-		<?php for($i=1;$i<=12;$i++){ ?>
+		<?php for($i=1;$i<=10;$i++){ ?>
 
 		<div class="col-6">
 			<label for="wpcf7-mailchimp-CustomValue<?php echo $i; ?>"><?php echo esc_html( __( 'Contact Form Value '.$i.':', 'wpcf7' ) ); ?></label><br />
@@ -85,15 +86,48 @@ function wpcf7_mch_add_mailchimp($args) {
 
 	</div>
 
+
 	<hr class="p-hr">
-	<p class="p-author">This <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" title="This FREE WordPress plugin" alt="This FREE WordPress plugin">FREE WordPress plugin</a> is currently developed in Orlando, Florida by <a href="//renzojohnson.com" target="_blank" title="Front End Developer: Renzo Johnson" alt="Front End Developer: Renzo Johnson">Renzo Johnson</a>. Feel free to contact with your comments or suggestions.</p>
+
+	<div class="mce-container">
+
+		<p class="p-author">This <a href="http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension" title="This FREE WordPress plugin" alt="This FREE WordPress plugin">FREE WordPress plugin</a> is currently developed in Orlando, Florida by <a href="//renzojohnson.com" target="_blank" title="Front End Developer: Renzo Johnson" alt="Front End Developer: Renzo Johnson">Renzo Johnson</a>. Feel free to contact with your comments or suggestions.</p>
+
+		<p class="p-author"><button type="button" aria-expanded="false" class="mce-trigger a-support ">Show Your Support</button></p>
+
+	</div>
+
+	<div class="mce-container mce-support" style="display:none">
+
+		<p class="mail-field">
+			<input type="checkbox" id="wpcf7-mailchimp-cf-support" name="wpcf7-mailchimp[cf-supp]" value="1"<?php echo ( isset($cf7_mch['cf-supp']) ) ? ' checked="checked"' : ''; ?> />
+			<label for="wpcf7-mailchimp-cfactive"><?php echo esc_html( __( 'Show Developer Backlink', 'wpcf7' ) ); ?> <small>( If checked, a backlink to our site will be shown in the footer. This is not compulsory, but always appreciated <span class="spartan-blue smiles">:)</span> )</small></label>
+		</p>
+
+		<?php
+
+			if( isset($cf7_mch['cf-supp']) && strlen($cf7_mch['cf-supp']) != 0 ) {
+
+				$CfSuppeOption = true;
+
+			} else {
+
+				$CfSuppeOption = false;
+
+			}
+
+			echo $CfSuppeOption;
+
+		 ?>
+
+
+	</div>
 
 </div>
 
 <?php
 
 }
-
 
 function wpcf7_mch_save_mailchimp($args) {
 
@@ -122,6 +156,16 @@ function show_mch_metabox ( $panels ) {
 
 }
 add_filter( 'wpcf7_editor_panels', 'show_mch_metabox' );
+
+
+
+function spartan_mce_author_wpcf7($mce_supps) {
+
+	$mce_supps .= '<!-- MailChimp extension by Renzo Johnson -->';
+	return $mce_supps;
+
+}
+add_filter('wpcf7_form_response_output', 'spartan_mce_author_wpcf7', 40);
 
 
 
@@ -156,6 +200,7 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
 	return $subject;
 
 }
+
 
 
 function wpcf7_mch_subscribe($obj) {
@@ -204,13 +249,13 @@ function wpcf7_mch_subscribe($obj) {
 
 		}
 
-		if( isset($cf7_mch['resubscribeoption']) && strlen($cf7_mch['resubscribeoption']) != 0 )
+		if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 )
 		{
-			$ResubscribeOption = true;
+			$ConfirmSubscription = true;
 		}
 			else
 		{
-			$ResubscribeOption = false;
+			$ConfirmSubscription = false;
 		}
 
 		if($subscribe && $email != $cf7_mch['email'])
@@ -229,7 +274,7 @@ function wpcf7_mch_subscribe($obj) {
 					foreach($listarr as $listid)
 					{
 		        		$listid = trim($listarr[0]);
-		        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, false, false, false, false);
+		        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, true, $ConfirmSubscription, false, false);
 					}
 			 	} catch (Exception $e)
 			 	{
