@@ -8,7 +8,7 @@ Stable tag: 4.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple way to integrate MailChimp mailing lists to Contact Form 7. Save your subscribers in a proper mailing list.
+Simple way to integrate [MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension) mailing lists to Contact Form 7. Save your subscribers in a proper mailing list.
 
 == Description ==
 
@@ -38,7 +38,7 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 
 = Leave a Comment or a Review =
 
-If this plugin is useful to you, please leave a review here: [Extension Review Page](https://wordpress.org/support/view/plugin-reviews/contact-form-7-mailchimp-extension) Or Leave a comment here: [Contact Form 7 MailChimp Extension author page](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+If this plugin is useful to you, please leave a review here: [Extension Review Page](https://wordpress.org/support/view/plugin-reviews/contact-form-7-mailchimp-extension) Or contact the [Web Developer](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension) here.
 
 
 
