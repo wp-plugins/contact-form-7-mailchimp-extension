@@ -20,6 +20,7 @@ Integrate Contact Form 7 with MailChimp. Automatically add form submissions to p
 * Easy to use
 * Use a different mailing list per contact form
 * single opt-in - no confirmation email send to subscribers
+* Double opt-in - confirmation email send to subscribers
 * Opt-in checkbox - add the chance to opt-in/opt-out
 * Support for custom fields
 * Latest MailChimp API
