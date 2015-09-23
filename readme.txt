@@ -8,18 +8,18 @@ Stable tag: 4.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple way to integrate [MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension) mailing lists to Contact Form 7. Save your subscribers in a proper mailing list.
+Simple way to integrate MailChimp mailing lists to Contact Form 7. Save your subscribers in a proper mailing list.
 
 == Description ==
 
-Integrate Contact Form 7 with MailChimp. Automatically add form submissions to predetermined lists in MailChimp, using its latest API. This MailChimp Extension supports multiple mailing lists and API Keys.
+Integrate Contact Form 7 with [MailChimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension). Automatically add form submissions to predetermined lists in MailChimp, using its latest API. This MailChimp Extension supports multiple mailing lists and API Keys.
 
 
 = Key Features =
 
 * Easy to use
 * Use a different mailing list per contact form
-* single opt-in - no confirmation email send to subscribers
+* Single opt-in - no confirmation email send to subscribers
 * Double opt-in - confirmation email send to subscribers
 * Opt-in checkbox - add the chance to opt-in/opt-out
 * Support for custom fields
