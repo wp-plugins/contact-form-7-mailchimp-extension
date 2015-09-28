@@ -116,7 +116,7 @@ function wpcf7_mch_add_mailchimp($args) {
 
 			}
 
-			echo $CfSuppeOption;
+			// echo $CfSuppeOption;
 
 		 ?>
 
@@ -161,7 +161,21 @@ add_filter( 'wpcf7_editor_panels', 'show_mch_metabox' );
 
 function spartan_mce_author_wpcf7($mce_supps) {
 
-	$mce_supps .= '<!-- MailChimp extension by Renzo Johnson -->';
+	$cf7_mch = get_option( 'cf7_mch_5');
+	$cfsupp = $cf7_mch['cf-supp'];
+
+	if($cfsupp==1)	 {
+
+	 	$mce_supps .= mce_referer($mce_referer);
+	 	$mce_supps .= mce_author($mce_author);
+
+	 } else {
+
+	 	$mce_supps .= mce_referer($mce_referer);
+	 	$mce_supps .= '<!-- Chimpmail extension by Renzo Johnson -->';
+
+	 }
+
 	return $mce_supps;
 
 }
@@ -205,6 +219,8 @@ function cf7_mch_tag_replace( $pattern, $subject, $posted_data, $html = false ) 
 
 function wpcf7_mch_subscribe($obj) {
 	$cf7_mch = get_option( 'cf7_mch_'.$obj->id() );
+	//var_dump($obj->id());
+	//exit(0);
 	$submission = WPCF7_Submission::get_instance();
 
 	if( $cf7_mch )
@@ -273,15 +289,15 @@ function wpcf7_mch_subscribe($obj) {
 			try {
 					foreach($listarr as $listid)
 					{
-		        		$listid = trim($listarr[0]);
-		        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, true, $ConfirmSubscription, false, false);
+        		$listid = trim($listarr[0]);
+        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, true, $ConfirmSubscription, false, false);
 					}
-			 	} catch (Exception $e)
+			} catch (Exception $e)
 			 	{
-        		//echo 'Error, check your error log file for details';
-			 			error_log($e->getMessage(), 0);
-			 			error_log($e->getMessage(), 1);
-    			}
+      		//echo 'Error, check your error log file for details';
+		 			error_log($e->getMessage(), 0);
+		 			error_log($e->getMessage(), 1);
+    		}
 		}
 	}
 
