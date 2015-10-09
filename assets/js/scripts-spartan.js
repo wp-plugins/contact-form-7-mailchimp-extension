@@ -23,24 +23,11 @@ jQuery(document).ready(function() {
 		});
 
 
-	///beggin
-
-		// jQuery(".mce-container").hide();
-
-		// jQuery(".mce-trigger").click(function(){
-		// 	jQuery(this).toggleClass("active").next().slideToggle("fast");
-		// 	return false; //Prevent the browser jump to the link anchor
-		// })
-
 
 		jQuery(".mce-trigger").click(function() {
 			jQuery(".mce-support").slideToggle("fast");
 			return false; //Prevent the browser jump to the link anchor
 		});
-
-	//end
-
-
 
 
 	}
