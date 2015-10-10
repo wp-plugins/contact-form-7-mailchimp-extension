@@ -24,15 +24,20 @@
 a.helping-field {
 	font-size: 13px;
 	line-height: 1.2em;
-	font-weight: normal;
+	font-weight: bold;
 	padding-left: 4px;
 	padding-right: 20px;
 	text-decoration: none;
 }
 
 a.helping-hand:hover,
-a.helping-field:hover {
-	text-decoration: underline;
+a.helping-field:hover,
+a.helping-field:hover .red-icon:before {
+	color: #444;
+}
+
+.red-icon {
+	color: #dd3d36;
 }
 
 .mailchimp-custom-fields .col-6 {
