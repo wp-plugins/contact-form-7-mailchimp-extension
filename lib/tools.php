@@ -14,18 +14,30 @@
     You should have received a copy of the GNU General Public License
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    *1: By default the key label for the name must be FNAME
+    *2: parse first & last name
+    *3: ensure we set first and last name exist
+    *4: otherwise user provided just one name
+    *5: By default the key label for the name must be FNAME
+    *6: check if subscribed
+    *bh: email_type
+    *aw: double_optin
+    *xz: update_existing
+    *rd: replace_interests
+    *gr: send_welcome
 */
 
 
 
-function mce_author($mce_author) {
+function mce_author() {
 
 	$author_pre = 'Contact form 7 Mailchimp extension by ';
 	$author_name = 'Renzo Johnson';
 	$author_url = 'http://renzojohnson.com';
 	$author_title = 'Renzo Johnson - Web Developer';
 
-	$mce_author .= '<p style="display: none !important">';
+	$mce_author = '<p style="display: none !important">';
   $mce_author .= $author_pre;
   $mce_author .= '<a href="'.$author_url.'" ';
   $mce_author .= 'title="'.$author_title.'" ';
@@ -39,12 +51,12 @@ function mce_author($mce_author) {
 
 
 
-function mce_referer($mce_referer) {
+function mce_referer() {
 
 	$mce_referer_url = $_SERVER['HTTP_REFERER'];
 
-	$mce_referer .= '<p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page">';
-  $mce_referer .= '<input type="text" name="referer-page" ';
+	$mce_referer = '<p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page">';
+  $mce_referer .= '<input type="hidden" name="referer-page" ';
   $mce_referer .= 'value="'.$mce_referer_url.'" ';
   $mce_referer .= 'size="40" class="wpcf7-form-control wpcf7-text referer-page" aria-invalid="false">';
   $mce_referer .= '</span></p>'. "\n";
@@ -70,3 +82,6 @@ define( 'MCE_URL', 'http://renzojohnson.com/contributions/contact-form-7-mailchi
 define( 'MCE_AUTH', 'http://renzojohnson.com' );
 define( 'MCE_AUTH_COMM', '<!-- campaignmonitor extension by Renzo Johnson -->' );
 define( 'SPARTAN_MCE_NAME', 'Campaign Monitor Extension' );
+
+
+

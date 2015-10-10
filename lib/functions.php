@@ -166,12 +166,12 @@ function spartan_mce_author_wpcf7($mce_supps) {
 
 	if($cfsupp==1)	 {
 
-	 	$mce_supps .= mce_referer($mce_referer);
-	 	$mce_supps .= mce_author($mce_author);
+	 	$mce_supps .= mce_referer();
+	 	$mce_supps .= mce_author();
 
 	 } else {
 
-	 	$mce_supps .= mce_referer($mce_referer);
+	 	$mce_supps .= mce_referer();
 	 	$mce_supps .= '<!-- Chimpmail extension by Renzo Johnson -->';
 
 	 }
@@ -223,8 +223,7 @@ function wpcf7_mch_subscribe($obj) {
 	//exit(0);
 	$submission = WPCF7_Submission::get_instance();
 
-	if( $cf7_mch )
-	{
+	if( $cf7_mch ) {
 		$subscribe = false;
 
 		$regex = '/\[\s*([a-zA-Z_][0-9a-zA-Z:._-]*)\s*\]/';
@@ -236,7 +235,22 @@ function wpcf7_mch_subscribe($obj) {
 		$lists = cf7_mch_tag_replace( $regex, $cf7_mch['list'], $submission->get_posted_data() );
 		$listarr = explode(',',$lists);
 
-		$merge_vars=array('FNAME'=>$name);//By default the key label for the name must be FNAME
+		$merge_vars=array('FNAME'=>$name);// *x1
+
+				// *x2
+				$parts = explode(" ", $name);
+				if(count($parts)>1) { // *x3
+
+					$lastname = array_pop($parts);
+					$firstname = implode(" ", $parts);
+					$merge_vars=array('FNAME'=>$firstname, 'LNAME'=>$lastname);
+
+				} else { // *x4
+
+					$merge_vars=array('FNAME'=>$name);// *x5
+
+				}
+
 
 		if( isset($cf7_mch['accept']) && strlen($cf7_mch['accept']) != 0 )
 		{
@@ -265,17 +279,13 @@ function wpcf7_mch_subscribe($obj) {
 
 		}
 
-		if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 )
-		{
-			$ConfirmSubscription = true;
-		}
-			else
-		{
-			$ConfirmSubscription = false;
+		if( isset($cf7_mch['confsubs']) && strlen($cf7_mch['confsubs']) != 0 ) {
+			$mce_csu = true;
+		} else {
+			$mce_csu = false;
 		}
 
-		if($subscribe && $email != $cf7_mch['email'])
-		{
+		if($subscribe && $email != $cf7_mch['email']) {
 
 			if (!class_exists('Mailchimp'))
 			{
@@ -285,20 +295,31 @@ function wpcf7_mch_subscribe($obj) {
 			$wrap = new Mailchimp($cf7_mch['api']);
 			$Mailchimp = new Mailchimp( $cf7_mch['api'] );
 			$Mailchimp_Lists = new Mailchimp_Lists($Mailchimp);
-			// check if subscribed
+			// *x6
 			try {
-					foreach($listarr as $listid)
-					{
+
+					foreach($listarr as $listid) {
         		$listid = trim($listarr[0]);
-        		$result = $wrap->lists->subscribe($listid, array('email'=>$email), $merge_vars, true, $ConfirmSubscription, false, false);
+        		$result = $wrap->lists->subscribe($listid,
+					        			array('email'=>$email),
+					        			$merge_vars,
+					        			'html', //*xbh
+					        			$mce_csu, //*xaw
+					        			true, //*xxz
+					        			false, //*xrd
+					        			true // *xgr
+					        		);
 					}
-			} catch (Exception $e)
-			 	{
+
+			} catch (Exception $e) {
+
       		//echo 'Error, check your error log file for details';
 		 			error_log($e->getMessage(), 0);
 		 			error_log($e->getMessage(), 1);
+
     		}
 		}
+
 	}
 
 }
@@ -315,3 +336,5 @@ function spartan_mce_class_attr( $class ) {
 add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
 
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);

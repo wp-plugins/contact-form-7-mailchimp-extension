@@ -17,7 +17,7 @@
 */
 
 
-require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/functions.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/enqueue.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/tools.php' );
+require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/functions.php' );
 require_once( SPARTAN_MCE_PLUGIN_DIR . '/lib/wp.php' );
