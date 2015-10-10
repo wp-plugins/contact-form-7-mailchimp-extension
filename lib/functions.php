@@ -336,5 +336,5 @@ function spartan_mce_class_attr( $class ) {
 add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
 
 
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
+/// error_reporting(E_ALL);
+/// ini_set("display_errors", 1);
