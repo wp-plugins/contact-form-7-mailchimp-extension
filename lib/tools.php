@@ -53,7 +53,17 @@ function mce_author() {
 
 function mce_referer() {
 
-	$mce_referer_url = $_SERVER['HTTP_REFERER'];
+  // $mce_referer_url = $THE_REFER=strval(isset($_SERVER['HTTP_REFERER']));
+
+  if(isset($_SERVER['HTTP_REFERER'])) {
+
+    $mce_referer_url = $_SERVER['HTTP_REFERER'];
+
+  } else {
+
+    $mce_referer_url = 'direct visit';
+
+  }
 
 	$mce_referer = '<p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page">';
   $mce_referer .= '<input type="hidden" name="referer-page" ';
