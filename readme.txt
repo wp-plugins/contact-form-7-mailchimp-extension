@@ -2,7 +2,7 @@
 Contributors: rnzo
 Donate link: http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension
 Tags: contact form 7, email, mailing list, createsend, mandrill, renzo, renzo johnson, cme, contact, form, contact form, mail chimp, newsletter, mailchimp, chimpmail
-Requires at least: 3.9
+Requires at least: 4.2
 Tested up to: 4.3
 Stable tag: 4.0.1
 License: GPLv2 or later
