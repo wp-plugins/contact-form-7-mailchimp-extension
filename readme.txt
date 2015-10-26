@@ -21,8 +21,8 @@ Integrate Contact Form 7 with [MailChimp](http://renzojohnson.com/contributions/
 * Use a different mailing list per contact form
 * Single opt-in - no confirmation email send to subscribers
 * Double opt-in - confirmation email send to subscribers
-* Opt-in checkbox - add the chance to opt-in/opt-out
-* Support for custom fields
+* [Opt-in checkbox](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-opt-in-checkbox) - add the chance to opt-in/opt-out
+* Support for [custom fields](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
 * Latest MailChimp API
 * Constantly updated
 
@@ -74,6 +74,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 == Changelog ==
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
+
+= 0.4.20 =
+
+* Updated documentation for [MailChimp Custom fields](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields).
 
 = 0.4.8 =
 
