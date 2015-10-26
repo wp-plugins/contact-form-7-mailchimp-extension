@@ -65,6 +65,7 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 7. [MailChimp Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 8. [Aweber vs Mailchimp](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
 9. [Mailchimp Contact Form](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension)
+10. [MailChimp Custom fields](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields)
 
 == Screenshots ==
 
