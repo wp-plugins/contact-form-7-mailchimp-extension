@@ -29,6 +29,16 @@ jQuery(document).ready(function() {
 			return false; //Prevent the browser jump to the link anchor
 		});
 
+    jQuery(".mce-trigger2").click(function() {
+      jQuery(".mce-support2").slideToggle("fast");
+      return false; //Prevent the browser jump to the link anchor
+    });
+
+    jQuery(".mce-trigger3").click(function() {
+      jQuery(".mce-support3").slideToggle("fast");
+      return false; //Prevent the browser jump to the link anchor
+    });
+
 
 	}
 

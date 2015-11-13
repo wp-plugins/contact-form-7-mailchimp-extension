@@ -76,6 +76,10 @@ Do you have questions or issues with Contact Form 7 MailChimp Extension? Use the
 
 For more information, see [Releases](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension).
 
+= 0.4.21 =
+
+* Preping for new features
+
 = 0.4.20 =
 
 * Updated documentation for [MailChimp Custom fields](http://renzojohnson.com/contributions/contact-form-7-mailchimp-extension/mailchimp-custom-fields).

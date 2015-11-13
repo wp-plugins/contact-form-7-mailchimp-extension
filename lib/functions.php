@@ -16,6 +16,20 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
+$plugins = get_option('active_plugins');
+$plugchimpmail ='chimpmail/chimpmail.php';
+
+if ( in_array( $plugchimpmail , $plugins ) ) {
+    //do_action( 'ep_before_list',$panels);
+}else {
+  add_filter( 'wpcf7_editor_panels', 'show_mch_metabox' );
+  add_action( 'wpcf7_after_save', 'wpcf7_mch_save_mailchimp' );
+  add_filter('wpcf7_form_response_output', 'spartan_mce_author_wpcf7', 40);
+  add_action( 'wpcf7_before_send_mail', 'wpcf7_mch_subscribe' );
+  add_filter( 'wpcf7_form_class_attr', 'spartan_mce_class_attr' );
+}
+
+
 function wpcf7_mch_add_mailchimp($args) {
 	$cf7_mch_defaults = array();
 	$cf7_mch = get_option( 'cf7_mch_'.$args->id(), $cf7_mch_defaults );
