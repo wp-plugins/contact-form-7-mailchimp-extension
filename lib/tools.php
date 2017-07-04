@@ -56,8 +56,8 @@ function mce_referer() {
   // $mce_referer_url = $THE_REFER=strval(isset($_SERVER['HTTP_REFERER']));
 
   if(isset($_SERVER['HTTP_REFERER'])) {
-
-    $mce_referer_url = $_SERVER['HTTP_REFERER'];
+    $encoding = "UTF-8";
+    $mce_referer_url = htmlspecialchars($_SERVER['HTTP_REFERER'],ENT_QUOTES | ENT_HTML401,$encoding);
 
   } else {
 
